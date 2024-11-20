@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../imagens/botafogo_background.png') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #656464; 
+    color: #fff;
+}
+
+.header-main h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.header-main img {
+    width: 50px;
+}
+
+.header-main button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #000000;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.header-main button:hover {
+    background: #777575;
+}
+
+#corpo-main {
+    flex: 1;
+    overflow-y: auto;
+    margin: 20px;
+    max-width: 1200px;
+    align-self: center;
+}
+
+#filtro-main {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#filtro-main button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background: #858484;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#filtro-main button:hover {
+    background: #333;
+}
+
+#filtro-main select {
+    display: none;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    transition: 0.3s;
+    flex: 1 1 calc(20% - 10px);
+    width: 300px;
+    margin: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    cursor: pointer;
+    padding: 20px;
+    background: #757575;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 5px;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    color: #000;
+    text-align: center;
+}
+
+.card p {
+    margin: 0;
+    color: #000000;
+    text-align: center;
+}
+
+.card h4 {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background: #ffea00;
+    margin-top: 15px;
+    color: #000000;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-basis: 100%;
+        max-width: 350px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .card {
+        flex-basis: 40%;
+        max-width: 350px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card {
+        max-width: 300px;
+        flex-basis: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    #filtro-main {
+        flex-direction: column;
+    }
+    #filtro-main button {
+        display: none; 
+    }
+    #filtro-main select {
+        display: block; 
+    }
+}
+
+@media (min-width: 768px) {
+    #filtro-main select {
+        display: none; 
+    }
+    #filtro-main button {
+        display: inline-block; 
+    }
+}
+
+#filtro-select {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%205%22%3E%3Cpath%20fill%3D%22%23ccc%22%20d%3D%22M2%200L0%202h4L2%200zm0%205L0%203h4L2%205z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#filtro-select:focus {
+    border-color: #333;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
+#filtro-select option {
+    padding: 10px;
+}
+
+
+select::-ms-expand {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #filtro-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #filtro-select {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+
+    #filtro-main button {
+        display: none; 
+    }
+
+    #filtro-main select {
+        display: block; 
+    }
+}
+
+@media (min-width: 769px) {
+    #filtro-main select {
+        display: none; 
+    }
+    #filtro-main button {
+        display: inline-block; 
+    }
+}
+
+/* Estilo para o botão ativo */
+#filtro-main button.active {
+    background: #fff;
+    color: #000;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    border: 1px solid #000;
+}

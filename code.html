@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elenco do Botafogo 2024</title>
+    <link rel="icon" href="imagens/escudo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="javascript/dom.js" defer></script>
+    <script src="javascript/code.js" defer></script>
+    <script src="scripts/titlecase.js" defer></script>
+</head>
+<body>
+    <header class="header-main">
+        <img src="imagens/escudo.png" alt="Logo do Botafogo">
+        <h1>Elenco Botafogo 2024/1</h1>
+        <button onclick="sair()">Sair</button>
+    </header>
+    <main id="corpo-main">
+        <section id="filtro-main">
+            <select id="filtro-select" onchange="buscarDados(this.value)">
+                <option value="https://botafogo-atletas.mange.li/2024-1/all" class="active">Todos</option>
+                <option value="https://botafogo-atletas.mange.li/2024-1/feminino">Feminino</option>
+                <option value="https://botafogo-atletas.mange.li/2024-1/masculino">Masculino</option>
+            </select>
+            <button onclick="buscarDados('https://botafogo-atletas.mange.li/2024-1/all')">Todos</button>
+            <button onclick="buscarDados('https://botafogo-atletas.mange.li/2024-1/feminino')">Feminino</button>
+            <button onclick="buscarDados('https://botafogo-atletas.mange.li/2024-1/masculino')">Masculino</button>
+        </section>
+        <section id="cards-container" class="cards-container"></section>
+        <section id="mensagem-nao-autenticado" style="display: none;">
+            <h2>Você não está autorizado.</h2>
+            <p>Por favor, faça o login para ver o conteúdo completo.</p>
+            <a href="index.html">Voltar para a página de login</a>
+        </section>
+    </main>
+</body>
+</html>
