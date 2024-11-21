@@ -69,23 +69,25 @@ span {
 
 .card button {
     font-family: 'Doto', sans-serif;
-    background-color: #fbf300;
     font-weight: 1000;
-
+    background-color: #fbf300;
     color: #000000;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 25px; /* Botão mais arredondado */
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 10px; 
+    transition: all 0.3s ease;
+    margin-top: 10px;
     width: 24em;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra no botão */
 }
 
 .card button:hover {
-    background-color: #e6e6e6;
+    background-color: #e6e6e6; /* Alteração de cor no hover */
     color: black;
+    transform: translateY(-3px); /* Leve elevação no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Destaque no hover */
 }
-
 @media (max-width: 768px) {
     body {
         padding: 50px 20px;
