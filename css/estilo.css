@@ -145,33 +145,6 @@ body {
 }
 
 
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 20px;
-}
-
-.card {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais destacada */
-    transition: all 0.3s ease; /* Transições suaves */
-    flex: 1 1 calc(20% - 10px);
-    width: 300px;
-    margin: 10px;
-    box-sizing: border-box;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    cursor: pointer;
-    padding: 20px;
-    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Gradiente sutil no fundo */
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden; /* Esconde elementos que saem do card */
-    position: relative;
-}
 
 .card img {
     max-width: 100%;
@@ -235,26 +208,60 @@ body {
 }
 
 
-@media (max-width: 768px) {
-    .card {
-        flex-basis: 100%;
-        max-width: 350px;
+.cards-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr); /* Inicia com 1 coluna */
+}
+
+@media (min-width: 576px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-    .card {
-        flex-basis: 40%;
-        max-width: 350px;
+@media (min-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas */
     }
 }
 
 @media (min-width: 1024px) {
-    .card {
-        max-width: 300px;
-        flex-basis: 20%;
+    .cards-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas */
     }
 }
+
+@media (min-width: 1300px) {
+    .cards-container {
+        grid-template-columns: repeat(5, 1fr); /* 5 colunas */
+    }
+}
+
+.card {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra mais destacada */
+    transition: all 0.3s ease; /* Transições suaves */
+    width: 100%; /* Ajusta ao grid */
+    max-width: 300px;
+    margin: 10px auto; /* Centraliza no grid */
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    cursor: pointer;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Gradiente sutil no fundo */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Esconde elementos que saem do card */
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Outras regras permanecem as mesmas */
 
 @media (max-width: 768px) {
     #filtro-main {

@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     inputPesquisa.id = 'pesquisa-nome';
     inputPesquisa.placeholder = 'BUSQUE POR NOME';
     inputPesquisa.style.padding = '1em';
-    inputPesquisa.style.width = '50%';
     inputPesquisa.style.maxWidth = '350px';
     inputPesquisa.style.margin = '0 10px';
     inputPesquisa.style.textAlign = 'center';
