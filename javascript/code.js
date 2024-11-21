@@ -8,19 +8,19 @@ function buscarDados(endpoint) {
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('cards-container');
-            container.innerHTML = ''; // Limpar cartões
+            container.innerHTML = ''; 
 
             if (data.length === 0) {
                 container.innerHTML = '<p>Nenhum jogador encontrado.</p>';
                 return;
             }
 
-            // Criar cada cartão dinamicamente
+         
             data.forEach(jogador => {
                 const card = criarCard(jogador);
                 container.appendChild(card);
 
-                // Exibição animada
+
                 setTimeout(() => card.classList.add('visible'), 100);
             });
         })
@@ -55,7 +55,7 @@ function formatarNome(nome) {
 document.addEventListener('DOMContentLoaded', () => {
     const filtroMain = document.getElementById('filtro-main');
 
-    // Criar Input de Pesquisa
+
     const inputPesquisa = document.createElement('input');
     inputPesquisa.type = 'text';
     inputPesquisa.id = 'pesquisa-nome';
@@ -65,13 +65,16 @@ document.addEventListener('DOMContentLoaded', () => {
     inputPesquisa.style.maxWidth = '350px';
     inputPesquisa.style.margin = '0 10px';
     inputPesquisa.style.textAlign = 'center';
+    inputPesquisa.style.fontFamily = 'Doto';
+    inputPesquisa.style.fontWeight = 1000;
 
-    // Adicionar funcionalidade de pesquisa
+
     inputPesquisa.addEventListener('keyup', () => {
+        console.log('Buscando jogadores:', inputPesquisa.value); // Diagnóstico
         const valorPesquisa = inputPesquisa.value.toLowerCase();
         const container = document.getElementById('cards-container');
         const cards = Array.from(container.querySelectorAll('.card'));
-
+    
         cards.forEach(card => {
             const nomeJogador = card.querySelector('h2 b').textContent.toLowerCase();
             const posicaoJogador = card.querySelector('p').textContent.toLowerCase();
@@ -81,14 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     : 'none';
         });
     });
+    
 
-    // Adicionar input ao layout
+
     filtroMain.appendChild(inputPesquisa);
 
-    // Carregar dados iniciais
+
     buscarDados('https://botafogo-atletas.mange.li/2024-1/all');
 
-    // Gerenciar botões de filtro
+
     const filtroButtons = filtroMain.querySelectorAll('button');
     filtroButtons.forEach(button => {
         button.addEventListener('click', function () {
