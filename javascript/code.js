@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     inputPesquisa.addEventListener('keyup', () => {
-        console.log('Buscando jogadores:', inputPesquisa.value); // Diagnóstico
+        console.log('Buscando jogadores:', inputPesquisa.value);
         const valorPesquisa = inputPesquisa.value.toLowerCase();
         const container = document.getElementById('cards-container');
         const cards = Array.from(container.querySelectorAll('.card'));
@@ -101,3 +101,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.querySelector('#filtro-main button').classList.add('active');
 });
+
