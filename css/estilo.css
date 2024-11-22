@@ -212,12 +212,8 @@ body {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(1, 1fr); /* Inicia com 1 coluna */
-}
-
-@media (min-width: 576px) {
-    .cards-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-    }
+    max-width: 1400px; /* Largura máxima da lista */
+    margin: 0 auto; /* Centraliza o container */
 }
 
 @media (min-width: 768px) {
@@ -358,4 +354,8 @@ select::-ms-expand {
     color: #000;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     border: 1px solid #000;
+}
+
+h1{
+    display: flex;
 }

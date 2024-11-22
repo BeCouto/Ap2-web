@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const exibirConteudo = (logadoStatus) => {
         if (logadoStatus === '1') {
             if (filtroMain) filtroMain.style.display = 'flex';
-            if (cardsContainer) cardsContainer.style.display = 'grid'; // Alterado para grid
+            if (cardsContainer) cardsContainer.style.display = 'grid';
             if (jogadorDetalhes) jogadorDetalhes.style.display = 'block';
             if (mensagemNaoAutenticado) mensagemNaoAutenticado.style.display = 'none';
         } else {
